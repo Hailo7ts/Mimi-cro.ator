@@ -2563,7 +2563,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		postiion: relative;
+		position: relative;
 		margin: -2.5em 0 0 -2.5em;
 	}
 
@@ -3318,3 +3318,30 @@ input, select, textarea {
 			}
 
 		}
+
+/* Login and Register */
+
+.login, .register{
+	margin: 0 auto;
+	max-width: 400px;
+}
+
+.login >input, .register >input
+, .login button, .register button{
+	display: block;
+	margin-bottom: 5px;
+	width: 100%;
+	background-color: #90c6d3;
+	font-weight: bold;
+}
+
+.login >input, .register >input{
+	border: 2px solid rgb(43, 55, 58);
+	border-radius: 5px;
+	background-color: #b7d9db;
+}
+
+.loginTitle, .registerTitle{
+	text-align: center;
+	font-size: 3rem;
+}

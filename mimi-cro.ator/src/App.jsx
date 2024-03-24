@@ -6,6 +6,8 @@ import Card from './components/Card'
 import data from './data'
 import Footer from './components/Footer'
 import Layout from './components/Layout'
+import LoginPage from './components/Pages/LoginPage'
+import RegisterPage from './components/Pages/RegisterPage'
 
 
 function App() {
@@ -28,11 +30,11 @@ function App() {
           </div>
         }/>
 
-        <Route path={'/login'} element={<div>login page</div>} />
-        <Route path={'/register'} element={<div>register page</div>} />
-      </Route>
-
+        <Route path={'/login'} element={<LoginPage />} />
+        <Route path={'/register'} element={<RegisterPage />} />
       
+      
+      </Route>      
     </Routes>
 
 
