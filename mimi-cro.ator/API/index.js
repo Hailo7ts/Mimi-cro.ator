@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const UserModel = require('./models/User')
+const bcrypt = require('bcrypt')
 
 const app = express()
 
@@ -12,11 +13,11 @@ mongoose.connect("mongodb://127.0.0.1:27017/mimi's-blog")
 
 app.post('/login', (req, res) => {
     const {username, password} = (req.body)
-    UserModel.findOne({username})
+    UserModel.findOne({username: username})
     .then(user => {
         if(user){
             if(user.password === password){
-                res.json("success")
+                res.json("Success")
             }else{
                 res.json("Password is incorrect.")
             }
@@ -27,12 +28,16 @@ app.post('/login', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
-    UserModel.create(req.body)
-    .then(users => res.json(users))
-    .catch(err => res.json(err))
+    const {name, password} = req.body
+    bcrypt.hash(password, 10)
+    .then(hash => {
+        UserModel.create({name, password, hash})
+        .then(users => res.json(users))
+        .catch(err => res.json(err))
+    }).catch(err => console.log(err.message))
 })
 
-app.listen(3001, () => {
+app.listen(5173, () => {
     console.log('server is runing')
 })
 

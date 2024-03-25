@@ -10,11 +10,11 @@ export default function RegisterPage(){
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:3001/register', {username, password})
+        axios.post('http://localhost:5173/register', {username, password})
         .then(res => {console.log(res)
         navigate('/login')
         })
-        .cath(err => console.log(err))
+        .catch(err => console.log(err))
     }
 
     return(

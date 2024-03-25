@@ -10,10 +10,10 @@ export default function LoginPage(){
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:3001/login', {username, password})
+        axios.post('http://localhost:5173/login', {username, password})
         .then(res => {
             console.log(res)
-            if(res.data === "success"){
+            if(res.data === "Success"){
                 navigate('/home')
             }
         })
@@ -30,12 +30,12 @@ export default function LoginPage(){
                
                 <input type="text" 
                 placeholder="username" 
-                onChange={event=> setUsername(event.target.value)}
+                //onChange={event=> setUsername(event.target.value)}
                 />
                 
                 <input type="password" 
                 placeholder="password" 
-                onChange={event=> setPassword(event.target.value)}
+                //onChange={event=> setPassword(event.target.value)}
                 />
                 <button>submit</button>
             </form>
