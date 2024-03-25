@@ -3321,7 +3321,7 @@ input, select, textarea {
 
 /* Login and Register */
 
-.login, .register{
+.register-container{
 	margin: 0 auto;
 	max-width: 400px;
 }
@@ -3344,4 +3344,24 @@ input, select, textarea {
 .loginTitle, .registerTitle{
 	text-align: center;
 	font-size: 3rem;
+}
+
+.register-container div{
+	display: flex;
+	justify-content: space-around;
+}
+
+/* Edit */
+.create-container{
+	display: flex;
+	flex-direction: column;
+}
+
+.create-container > input{
+	margin: 1rem 1rem;
+}
+
+.create-container > button{
+	margin: 2rem;
+	width: 50%;
 }

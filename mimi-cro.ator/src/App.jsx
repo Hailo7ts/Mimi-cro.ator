@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import {Route, Routes} from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Header from './components/Header'
 import Main from './components/Main'
 import Card from './components/Card'
@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Layout from './components/Layout'
 import LoginPage from './components/Pages/LoginPage'
 import RegisterPage from './components/Pages/RegisterPage'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import CreatPost from './components/Pages/CreatePost'
 
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
 
         <Route path={'/login'} element={<LoginPage />} />
         <Route path={'/register'} element={<RegisterPage />} />
+        <Route path={'/create'} element={<CreatPost />} />
       
       
       </Route>      
